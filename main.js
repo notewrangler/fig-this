@@ -26,20 +26,22 @@ var menu = {
     }
   ]
 };
+// function getHeaders(menu) {
+  var courses =[];
+  for(var key in menu) {
+    courses.push(key);
+  }
+// }
 
-for(var key in menu) {
-  console.log(key);
-}
 
-
-var heads = menu[key].map(function(course){
+var courseList = courses.forEach(function(cat) {
+   console.log(cat);
+   return menu[cat].map(function(thing){
+     console.log(thing);
      return {
-       course: key,
-       name: course.name,
-       price: course.price
+       course: cat,
+       name: thing.name,
+       price: thing.price
      };
-  });
-
-
-
-console.log(heads);
+   });
+});
